@@ -3,82 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery | KASTHOUSE d.o.o.</title>
+    <title>Gallery | Global CNC d.o.o.</title>
     <meta
       name="description"
-      content="Explore our modern prefabricated houses through our gallery."
+      content="Explore our high-precision production gallery at Global CNC d.o.o. Teslić."
     />
 
     <!--=============== FAVICON ===============-->
-    <link
-      rel="apple-touch-icon"
-      sizes="57x57"
-      href="/assets/images/favicon/apple-icon-57x57.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="60x60"
-      href="/assets/images/favicon/apple-icon-60x60.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="72x72"
-      href="/assets/images/favicon/apple-icon-72x72.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="/assets/images/favicon/apple-icon-76x76.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="114x114"
-      href="/assets/images/favicon/apple-icon-114x114.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="120x120"
-      href="/assets/images/favicon/apple-icon-120x120.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="144x144"
-      href="/assets/images/favicon/apple-icon-144x144.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="/assets/images/favicon/apple-icon-152x152.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/images/favicon/apple-icon-180x180.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="/assets/images/favicon/android-icon-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/images/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="/assets/images/favicon/favicon-96x96.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/images/favicon/favicon-16x16.png"
-    />
+    <link rel="icon" href="./assets/images/favicon/favicon.ico" />
 
     <!--========== Main style sheet ==========-->
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -90,35 +22,123 @@
     />
 
     <style>
+      /* Stajling modernog filter menija unutar galerije */
+      .gallery-filter-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+      }
+
+      .gallery-filter-menu li button {
+        background: transparent;
+        border: 1px solid var(--cnc-border);
+        color: var(--color-02);
+        padding: 10px 24px;
+        font-size: var(--small-font-size);
+        font-weight: var(--font-medium);
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .gallery-filter-menu li button:hover,
+      .gallery-filter-menu li button.active {
+        background: var(--color-01);
+        border-color: var(--color-01);
+        color: var(--dark-color) !important;
+        box-shadow: 0 4px 15px rgba(255, 5, 5, 0.2);
+      }
+
+      .light-theme .gallery-filter-menu li button {
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+
+      .light-theme .gallery-filter-menu li button.active {
+        color: #ffffff !important;
+      }
+
+      /* Grid raspored i optimizacija kartica */
       .gallery-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 20px;
-        padding: 40px 0;
+        gap: 24px;
+        padding: 20px 0 50px;
       }
 
       .gallery-item {
+        position: relative;
         overflow: hidden;
-        border-radius: 20px;
-        box-shadow: var(--shadow-01);
-        transition: transform 0.3s ease;
-        cursor: pointer;
-        height: 300px;
+        border-radius: 12px;
+        border: 1px solid var(--cnc-border);
+        background: var(--cnc-bg-surface);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        height: 280px;
       }
 
-      .gallery-item:hover {
-        transform: scale(1.03);
+      .light-theme .gallery-item {
+        background: var(--cnc-light-bg-surface);
+        border-color: rgba(0, 0, 0, 0.06);
+      }
+
+      .gallery-item.hide {
+        display: none;
       }
 
       .gallery-item img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s ease;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Overlay efekat sa tekstom iz starog koda */
+      .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          360deg,
+          rgba(11, 12, 10, 0.9) 0%,
+          rgba(11, 12, 10, 0.2) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 25px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
       }
 
       .gallery-item:hover img {
-        transform: scale(1.1);
+        transform: scale(1.08);
+      }
+
+      .gallery-overlay h4 {
+        color: #ffffff;
+        font-size: var(--large-font-size);
+        font-weight: var(--font-bold);
+        margin-bottom: 4px;
+      }
+
+      .gallery-overlay span {
+        color: var(--color-01);
+        font-size: var(--tiny-font-size);
+        text-transform: uppercase;
+        font-family: var(--mono-font-family);
+        letter-spacing: 1px;
       }
     </style>
   </head>
@@ -132,26 +152,19 @@
             <a href="index.html">
               <span>
                 <img
-                  src="assets/images/logo/kast-house-logo.png"
-                  alt="KASTHOUSE Logo"
+                  src="assets/images/logo/logo-global-cnc-white.png"
+                  alt="Global CNC Logo"
                   class="kast_house_logo-img"
-                  loading="lazy"
-                  decoding="async"
                 />
               </span>
-              <div class="logo-text-wrapper">
-                <span class="kast_text">KAST</span
-                ><span class="house_text">HOUSE</span>
-              </div>
             </a>
           </div>
           <div class="header-btns">
             <div class="lang-switcher">
               <select id="lang-selector" onchange="setLanguage(this.value)">
                 <option value="en">EN</option>
-                <option value="it">IT</option>
                 <option value="de">DE</option>
-                <option value="hr">HR</option>
+                <option value="bs">BS</option>
               </select>
             </div>
 
@@ -169,105 +182,120 @@
       <div class="sue-container">
         <div class="section-title">
           <h2 data-i18n="nav_gallery">Gallery</h2>
-          <p>A showcase of our premium prefabricated house projects.</p>
+          <p data-i18n="gallery_subtitle">
+            Our Products & Production Capabilities
+          </p>
         </div>
 
+        <!-- Filter Meni sa starog sajta prilagođen novom dizajnu -->
+        <ul class="gallery-filter-menu">
+          <li>
+            <button class="filter-btn active" data-filter="all">All</button>
+          </li>
+          <li>
+            <button class="filter-btn" data-filter="milling">Milling</button>
+          </li>
+          <li>
+            <button class="filter-btn" data-filter="turning">Turning</button>
+          </li>
+          <li>
+            <button class="filter-btn" data-filter="engraving">
+              Engraving
+            </button>
+          </li>
+        </ul>
+
+        <!-- Grid sa elementima iz starog koda mapiranim u klase filtriranja -->
         <div class="gallery-grid">
-          <div class="gallery-item">
+          <!-- Item 1: Milling -->
+          <div class="gallery-item" data-category="milling">
             <img
-              src="assets/images/kast-house-home-1.jpg"
-              alt="Gallery Image"
+              src="/assets/images/globalcnc-glodanje9.jpg"
+              alt="CNC Milling Component"
               loading="lazy"
-              decoding="async"
             />
+            <div class="gallery-overlay">
+              <h4>GlobalCNC Project</h4>
+              <span>Milling</span>
+            </div>
           </div>
-          <div class="gallery-item">
+
+          <!-- Item 2: Turning -->
+          <div class="gallery-item" data-category="turning">
             <img
-              src="assets/images/kast-house-home-2.jpg"
-              alt="Gallery Image"
+              src="/assets/images/globalcnc-tokarenje6.jpg"
+              alt="CNC Turning Component"
               loading="lazy"
-              decoding="async"
             />
+            <div class="gallery-overlay">
+              <h4>GlobalCNC Project</h4>
+              <span>Turning</span>
+            </div>
           </div>
-          <div class="gallery-item">
+
+          <!-- Item 3: Engraving -->
+          <div class="gallery-item" data-category="engraving">
             <img
-              src="assets/images/kast-house-home-3.jpg"
-              alt="Gallery Image"
+              src="/assets/images/globalcnc-gravura1.jpg"
+              alt="Precision Engraving"
               loading="lazy"
-              decoding="async"
             />
+            <div class="gallery-overlay">
+              <h4>GlobalCNC Project</h4>
+              <span>Engraving</span>
+            </div>
           </div>
-          <div class="gallery-item">
+
+          <!-- Item 4: Milling -->
+          <div class="gallery-item" data-category="milling">
             <img
-              src="assets/images/kast-house-home-4.jpg"
-              alt="Gallery Image"
+              src="/assets/images/globalcnc-glodanje4.jpg"
+              alt="CNC Milling Component"
               loading="lazy"
-              decoding="async"
             />
+            <div class="gallery-overlay">
+              <h4>GlobalCNC Project</h4>
+              <span>Milling</span>
+            </div>
           </div>
-          <div class="gallery-item">
+
+          <!-- Item 5: Milling -->
+          <div class="gallery-item" data-category="milling">
             <img
-              src="assets/images/kast-house-home-5.jpg"
-              alt="Gallery Image"
+              src="/assets/images/globalcnc-glodanje6.jpg"
+              alt="CNC Milling Workpiece"
               loading="lazy"
-              decoding="async"
             />
+            <div class="gallery-overlay">
+              <h4>GlobalCNC Project</h4>
+              <span>Milling</span>
+            </div>
           </div>
-          <div class="gallery-item">
+
+          <!-- Item 6: Turning -->
+          <div class="gallery-item" data-category="turning">
             <img
-              src="assets/images/kast-house-home-6.jpg"
-              alt="Gallery Image"
+              src="/assets/images/globalcnc-tokarenje7.jpg"
+              alt="CNC Lathe Machining"
               loading="lazy"
-              decoding="async"
             />
+            <div class="gallery-overlay">
+              <h4>GlobalCNC Project</h4>
+              <span>Turning</span>
+            </div>
           </div>
-          <div class="gallery-item">
+
+          <!-- Item 7: Turning -->
+          <div class="gallery-item" data-category="turning">
             <img
-              src="assets/images/kast-home-custom-extensions (1).jpg"
-              alt="Gallery Image"
+              src="/assets/images/globalcnc-tokarenje8.jpg"
+              alt="CNC Turned Part"
               loading="lazy"
-              decoding="async"
             />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="assets/images/kast-home-custom-extensions (2).jpg"
-              alt="Gallery Image"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="assets/images/kast-home-custom-extensions (3).jpg"
-              alt="Gallery Image"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="assets/images/kast-home-custom-extensions (4).jpg"
-              alt="Gallery Image"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="assets/images/kast-home-custom-extensions (5).jpg"
-              alt="Gallery Image"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="assets/images/kast-home-custom-extensions (6).jpg"
-              alt="Gallery Image"
-              loading="lazy"
-              decoding="async"
-            />
+            <div class="gallery-overlay">
+              <h4>GlobalCNC Project</h4>
+              <span>Turning</span>
+            </div>
           </div>
         </div>
 
@@ -290,13 +318,7 @@
             <li class="menu-item">
               <a href="index.html#home">
                 <i class="ri-home-4-line"></i>
-                <span data-i18n="nav_home">Home</span></a
-              >
-            </li>
-            <li>
-              <a href="index.html#about">
-                <i class="ri-user-line"></i>
-                <span data-i18n="nav_about">About</span>
+                <span data-i18n="nav_home">Home</span>
               </a>
             </li>
             <li>
@@ -306,15 +328,15 @@
               </a>
             </li>
             <li>
-              <a href="index.html#portfolio">
-                <i class="ri-briefcase-line"></i>
-                <span data-i18n="nav_portfolio">Projects</span>
+              <a href="index.html#services">
+                <i class="ri-settings-3-line"></i>
+                <span data-i18n="nav_portfolio">Machinery</span>
               </a>
             </li>
             <li>
               <a href="index.html#contact">
                 <i class="ri-chat-1-line"></i>
-                <span data-i18n="nav_contact">Contact</span>
+                <span data-i18n="nav_contact">RFQ Quote</span>
               </a>
             </li>
           </ul>
@@ -331,27 +353,24 @@
       <div class="sue-container">
         <div class="inner">
           <div class="sue-logo">
-            <a href="#home"
-              ><span>
+            <a href="index.html#home">
+              <span>
                 <img
-                  src="assets/images/logo/kast-house-logo.png"
+                  src="assets/images/logo/logo-global-cnc-white.png"
                   alt="Logo"
                   class="haustechnik-logo-footer"
-                  loading="lazy"
-                  decoding="async" /></span
-            ></a>
+                />
+              </span>
+            </a>
           </div>
           <div class="section-title">
-            <p data-i18n="footer_p1">Vukovarska 43A</p>
-            <p data-i18n="footer_p2">51 000 Rijeka - Croatia</p>
-
-            <a href="tel:+385955989184">Tel: +385 95 598 9184</a>
+            <p>Svetog Save 79, br. 25</p>
+            <p>74270 Teslić - Bosnia and Herzegovina</p>
+            <a href="tel:+38766849892">Tel: +387 66 849 892</a>
           </div>
           <ul class="footer-menu">
             <li class="menu-item"><a href="index.html">Home</a></li>
-            <li class="menu-item">
-              <a href="#" data-i18n="footer_gallery">Gallery</a>
-            </li>
+            <li class="menu-item"><a href="#">Gallery</a></li>
             <li class="menu-item">
               <a href="privacy-policy.html" data-i18n="footer_privacy"
                 >Privacy Policy</a
@@ -375,17 +394,41 @@
               </script>
               &copy; Copyright |
             </span>
-            <span data-i18n="footer_copy">All rights reserved by</span>
-            <a href="">
-              <span>KASTHOUSE</span>
-            </a>
+            <span>All rights reserved by</span>
+            <a href=""><span>Global CNC d.o.o.</span></a>
           </p>
         </div>
       </div>
     </footer>
 
-    <!--========== Main javascript ==========-->
+    <!--========== Main javascript & In-line Filter Script ==========-->
     <script src="assets/js/lang.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+      // Vanila JS Logika za filtriranje galerijskih stavki bez spoljnih biblioteka
+      document.querySelectorAll('.filter-btn').forEach((button) => {
+        button.addEventListener('click', () => {
+          // Ukloni active klasu sa svih dugmadi i dodaj na kliknuto
+          document
+            .querySelectorAll('.filter-btn')
+            .forEach((btn) => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          const filterValue = button.getAttribute('data-filter');
+
+          document.querySelectorAll('.gallery-item').forEach((item) => {
+            if (
+              filterValue === 'all' ||
+              item.getAttribute('data-category') === filterValue
+            ) {
+              item.classList.remove('hide');
+            } else {
+              item.classList.add('hide');
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

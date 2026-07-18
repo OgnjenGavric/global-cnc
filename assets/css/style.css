@@ -92,11 +92,7 @@
   --bottom-nav-bg: rgba(245, 247, 244, 0.92);
   --card-bg: #ffffff;
   --modal-backdrop-bg: rgba(25, 28, 23, 0.5);
-  --footer-bg: linear-gradient(
-    360deg,
-    var(--cnc-light-bg-raised),
-    var(--cnc-light-bg-surface)
-  );
+  --footer-bg: #dce1da;
 }
 
 .light-theme .sue-header.shrink {
@@ -921,7 +917,7 @@ body {
 ===================================================== */
 .google-map-section {
   padding-top: 4em;
-  padding-bottom: 6em; /* Pravi čist razmak prije početka footera */
+  padding-bottom: 6em;
 }
 
 .google-map iframe {
@@ -982,6 +978,61 @@ body {
 .copy-right {
   font-size: var(--tiny-font-size);
   color: var(--color-04);
+}
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+/* Stil za "Follow Us" tekst */
+.footer-social span {
+  font-size: var(--tiny-font-size);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-01); /* CNC crvena */
+  font-weight: var(--font-medium);
+}
+
+/* Horizontalno ređanje ikonica */
+.footer-social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Razmak između ikonica */
+  padding: 0;
+}
+
+/* Pojedinačni link/krug oko ikonice */
+.footer-social-icons li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 5, 5, 0.25); /* Blagi crveni prsten */
+  background: rgba(255, 5, 5, 0.02);
+  color: var(--color-02); /* Bijela u dark, tamna u light temi */
+  font-size: var(--large-font-size);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-icons li a:hover {
+  color: #ffffff !important;
+  background: var(--color-01) !important;
+  border-color: var(--color-01) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(255, 5, 5, 0.3);
+}
+
+/* Prilagođavanje za Light Theme pozadinu */
+.light-theme .footer-social-icons li a {
+  color: var(--cnc-light-text-primary);
+  border-color: rgba(214, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .kh-cookie-banner {
@@ -1094,5 +1145,36 @@ body {
     width: 100%;
     justify-content: space-between;
     padding: 15px 20px;
+  }
+  .footer-menu {
+    flex-direction: column !important; /* Ređa linkove jedan ispod drugog */
+    gap: 12px !important; /* Pravi ravnomeran razmak između stavki */
+    padding: 10px 0;
+    margin: 15px auto !important;
+    max-width: 250px; /* Ograničavamo širinu radi lakšeg centriranja */
+  }
+
+  .footer-menu .menu-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-menu .menu-item a {
+    font-size: var(--tiny-font-size) !important;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 4px 0;
+    width: 100%;
+    transition: color 0.3s ease;
+  }
+
+  /* Opciono: Suptilna, jedva primetna linija između linkova za bolju strukturu */
+  .footer-menu .menu-item:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  /* Prilagođavanje linije za tamnu temu */
+  .dark-theme .footer-menu .menu-item:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 }
