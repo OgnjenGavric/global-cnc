@@ -65,11 +65,44 @@
       }
 
       /* Grid raspored i optimizacija kartica */
+      /* Grid raspored: 4 kolone na velikim ekranima, 3 na tabletima, 2 na manjim, 1 na mobilnom */
       .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(
+          4,
+          1fr
+        ); /* Podrazumevano 4 kolone za desktop */
         gap: 24px;
         padding: 20px 0 50px;
+        width: 100%;
+      }
+
+      /* Ekran veličine laptopa (npr. do 1024px) - prebacuje u 3 kolone */
+      @media screen and (max-width: 1024px) {
+        .gallery-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* Ekran veličine manjih tableta (do 768px) - prebacuje u 2 kolone */
+      @media screen and (max-width: 768px) {
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        }
+      }
+
+      /* Mobilni telefoni (do 480px) - vraća kako jeste, 1 slika u redu punom širinom */
+      @media screen and (max-width: 480px) {
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+          padding-inline: 5px;
+        }
+
+        .gallery-item {
+          height: 240px; /* Malo smanjujemo visinu na mobilnom da izgleda skladnije */
+        }
       }
 
       .gallery-item {
@@ -183,23 +216,45 @@
         <div class="section-title">
           <h2 data-i18n="nav_gallery">Gallery</h2>
           <p data-i18n="gallery_subtitle">
-            Our Products & Production Capabilities
+            Our Products &amp; Production Capabilities
           </p>
         </div>
 
-        <!-- Filter Meni sa starog sajta prilagođen novom dizajnu -->
+        <!-- Filter Meni -->
         <ul class="gallery-filter-menu">
           <li>
-            <button class="filter-btn active" data-filter="all">All</button>
+            <button
+              class="filter-btn active"
+              data-filter="all"
+              data-i18n="filter_all"
+            >
+              All
+            </button>
           </li>
           <li>
-            <button class="filter-btn" data-filter="milling">Milling</button>
+            <button
+              class="filter-btn"
+              data-filter="milling"
+              data-i18n="filter_milling"
+            >
+              Milling
+            </button>
           </li>
           <li>
-            <button class="filter-btn" data-filter="turning">Turning</button>
+            <button
+              class="filter-btn"
+              data-filter="turning"
+              data-i18n="filter_turning"
+            >
+              Turning
+            </button>
           </li>
           <li>
-            <button class="filter-btn" data-filter="engraving">
+            <button
+              class="filter-btn"
+              data-filter="engraving"
+              data-i18n="filter_engraving"
+            >
               Engraving
             </button>
           </li>
@@ -301,9 +356,10 @@
 
         <div class="section-title">
           <div class="sue-main-btn fill-btn">
-            <a href="index.html#home"
-              ><i class="ri-home-4-line"></i> Back to Home</a
-            >
+            <a href="index.html#home">
+              <i class="ri-home-4-line"></i>
+              <span data-i18n="btn_back_home">Back to Home</span>
+            </a>
           </div>
         </div>
       </div>

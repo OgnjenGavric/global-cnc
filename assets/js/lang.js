@@ -77,6 +77,12 @@ const translations = {
     "contact_phone_title": "Telephone",
     "contact_call": "Call Us",
     "pwa_hint_ios": "Tap Share <i class=\"ri-share-forward-box-line\"></i> &rarr; Add to Home Screen",
+    "gallery_subtitle": "Our Products & Production Capabilities",
+    "filter_all": "All",
+    "filter_milling": "Milling",
+    "filter_turning": "Turning",
+    "filter_engraving": "Engraving",
+    "btn_back_home": "Back to Home",
     "pwa_hint_android": "Add us to your Home Screen for a better experience"
   },
   de: {
@@ -157,6 +163,12 @@ const translations = {
     "contact_phone_title": "Telefon",
     "contact_call": "Rufen Sie uns an",
     "pwa_hint_ios": "Tippen Sie auf Teilen <i class=\"ri-share-forward-box-line\"></i> &rarr; Zum Home-Bildschirm hinzufügen",
+    "gallery_subtitle": "Unsere Produkte & Fertigungskapazitäten",
+    "filter_all": "Alle",
+    "filter_milling": "Fräsen",
+    "filter_turning": "Drehen",
+    "filter_engraving": "Gravieren",
+    "btn_back_home": "Zurück seite",
     "pwa_hint_android": "Fügen Sie uns für ein besseres Erlebnis zu Ihrem Home-Bildschirm hinzu"
   },
   bs: {
@@ -237,6 +249,12 @@ const translations = {
     "contact_phone_title": "Telefon",
     "contact_call": "Nazovite nas",
     "pwa_hint_ios": "Tapnite na Share <i class=\"ri-share-forward-box-line\"></i> &rarr; Dodajte na početni ekran",
+    "gallery_subtitle": "Naši proizvodi i proizvodne mogućnosti",
+    "filter_all": "Sve",
+    "filter_milling": "Glodanje",
+    "filter_turning": "Struganje",
+    "filter_engraving": "Graviranje",
+    "btn_back_home": "Nazad na početnu",
     "pwa_hint_android": "Dodajte nas na početni ekran za bolji doživljaj"
   }
 };
