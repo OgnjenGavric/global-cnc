@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Page Not Found | KASTHOUSE d.o.o.</title>
+  <meta name="description" content="Oops! The page you are looking for does not exist." />
+
+  <!--=============== FAVICON ===============-->
+  <link rel="icon" href="./assets/images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png" />
+
+  <!--========== Main style sheet ==========-->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!--========== Remixicon ==========-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
+</head>
+
+<body>
+  <!--========== Header ==========-->
+  <header class="sue-header">
+    <div class="sue-container">
+      <div class="inner">
+        <div class="sue-logo">
+          <a href="index.html"><span>
+              <img src="assets/images/logo/logo-small.png" alt="Kast House Logo" class="kast_house_logo-img" />
+            </span>KAST<span class="kast_house_logo-text">HOUSE</span></a>
+        </div>
+        <div class="header-btns">
+          <div class="lang-switcher">
+            <select id="lang-selector" onchange="setLanguage(this.value)">
+              <option value="en">EN</option>
+              <option value="it">IT</option>
+              <option value="de">DE</option>
+              <option value="hr">HR</option>
+            </select>
+          </div>
+
+          <div class="theme-btn">
+            <i class="ri-sun-fill sun-icon"></i>
+            <i class="ri-moon-fill moon-icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!--========== 404 Content ==========-->
+  <section class="sue-section"
+    style="min-height: calc(100vh - 150px); display: flex; align-items: center; justify-content: center; text-align: center; padding: 100px 20px;">
+    <div class="sue-container">
+      <div class="avatar-info"
+        style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; row-gap: 30px;">
+        <h1 class="my-name" style="font-size: 8rem; line-height: 1; color: var(--primary-color);">404</h1>
+        <h2 style="font-size: var(--h2-font-size); font-weight: var(--font-bold); color: var(--color-02);"
+          data-i18n="404_title">Page Not Found</h2>
+        <p style="font-size: var(--medium-font-size); color: var(--color-04);" data-i18n="404_desc">
+          Oops! The page you are looking for does not exist. It might have been moved or deleted.
+        </p>
+        <div class="sue-main-btn fill-btn">
+          <a href="index.html">
+            <span data-i18n="404_btn">Go Back Home</span>
+            <i class="ri-home-4-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--========== Footer ==========-->
+  <footer class="sue-footer">
+    <div class="sue-container">
+      <div class="inner">
+        <div class="sue-logo">
+          <a href="index.html">
+            <span>
+              <img src="assets/images/logo/kast-house-logo.png" alt="KASTHOUSE Logo" class="kast_house_logo-img">
+            </span>
+            <div class="logo-text-wrapper">
+              <span class="kast_text">KAST</span><span class="house_text">HOUSE</span>
+            </div>
+          </a>
+        </div>
+        <div class="section-title">
+          <p data-i18n="footer_p1">Vukovarska 43A</p>
+          <p data-i18n="footer_p2">51 000 Rijeka - Croatia</p>
+
+          <a href="tel:+385955989184">Tel: +385 95 598 9184</a>
+        </div>
+        <ul class="footer-menu">
+          <li class="menu-item"><a href="index.html">Home</a></li>
+          <li class="menu-item"><a href="gallery.html" data-i18n="footer_gallery">Gallery</a></li>
+          <li class="menu-item"><a href="privacy-policy.html" data-i18n="footer_privacy">Privacy Policy</a>
+          </li>
+          <li class="menu-item"><a href="cookie-policy.html" data-i18n="footer_cookies">Cookie Policy</a></li>
+          <li class="menu-item"><a href="legal-notice.html" data-i18n="footer_legal">Legal Notice</a></li>
+        </ul>
+        <p class="copy-right">
+          <span>
+            <script>
+              document.write(new Date().getFullYear());
+            </script> &copy; Copyright |
+          </span>
+          <span data-i18n="footer_copy">All rights reserved by</span>
+          <a href="">
+            <span>KASTHOUSE</span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!--========== Main javascript ==========-->
+  <script src="assets/js/lang.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

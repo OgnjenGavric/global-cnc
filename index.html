@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global CNC d.o.o. Teslić - Precizna obrada metala</title>
+    <meta
+      name="description"
+      content="Global CNC d.o.o. Teslić pruža vrhunske usluge CNC glodanja, struganja i graviranja metala po najviševim evropskim standardima."
+    />
+
+    <!-- Google / Schema.org -->
+    <meta itemprop="name" content="Global CNC d.o.o." />
+    <meta
+      itemprop="description"
+      content="Global CNC d.o.o. Teslić pruža vrhunske usluge CNC glodanja, struganja i graviranja metala po najviševim evropskim standardima."
+    />
+    <meta
+      itemprop="image"
+      content="https://globalcnc.co/assets/images/og-image.jpg"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:url" content="https://globalcnc.co/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Global CNC d.o.o. Teslić - Precizna obrada metala"
+    />
+    <meta
+      property="og:description"
+      content="Global CNC d.o.o. Teslić pruža vrhunske usluge CNC glodanja, struganja i graviranja metala po najviševim evropskim standardima."
+    />
+    <meta
+      property="og:image"
+      content="https://globalcnc.co/assets/images/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Global CNC" />
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="/assets/images/favicon/favicon.ico" />
+
+    <!-- PWA — Manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- PWA — Theme color -->
+    <meta
+      name="theme-color"
+      content="#F5F7F4"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#111310"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <!--========== Swiper CSS ==========-->
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+
+    <!--========== Remixicon ==========-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+    />
+
+    <!--========== Main style sheet ==========-->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+
+  <body>
+    <!--========== To top button with scroll indicator bar ==========-->
+    <div class="to-top-btn">
+      <a href="#home" class="to-top-icon">
+        <span>To Top</span>
+      </a>
+      <div class="scroll-indicator-bar"></div>
+    </div>
+
+    <!--========== Header ==========-->
+    <header class="sue-header">
+      <div class="sue-container">
+        <div class="inner">
+          <div class="sue-logo">
+            <a href="#">
+              <span>
+                <img
+                  src="assets/images/logo/logo-global-cnc-white.png"
+                  alt="Global CNC Logo"
+                  class="kast_house_logo-img"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+            </a>
+          </div>
+          <div class="header-btns">
+            <div class="sue-main-btn border-btn lets-talk-btn">
+              <a href="tel:+38766849892">
+                <span data-i18n="nav_lets_talk">Direktan poziv</span>
+              </a>
+            </div>
+            <a href="tel:+38766849892" class="lets-talk-icon">
+              <i class="ri-phone-fill"></i>
+            </a>
+
+            <div class="lang-switcher">
+              <select id="lang-selector" onchange="setLanguage(this.value)">
+                <option value="en">EN</option>
+                <option value="de">DE</option>
+                <option value="bs">BS</option>
+              </select>
+            </div>
+
+            <div class="theme-btn">
+              <i class="ri-sun-fill sun-icon"></i>
+              <i class="ri-moon-fill moon-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--========== Bottom navigation menu ==========-->
+    <div class="bottom-nav-container">
+      <div class="bottom-nav">
+        <div class="bottom-nav-inner">
+          <i class="ri-arrow-left-down-line menu-hide-btn"></i>
+          <ul class="menu">
+            <li class="menu-item">
+              <a href="#home" class="current">
+                <i class="ri-home-4-line"></i>
+                <span data-i18n="nav_home">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#about">
+                <i class="ri-user-line"></i>
+                <span data-i18n="nav_about">O nama</span>
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <i class="ri-service-line"></i>
+                <span data-i18n="nav_services">Usluge</span>
+              </a>
+            </li>
+            <li>
+              <a href="gallery.html">
+                <i class="ri-image-line"></i>
+                <span data-i18n="nav_gallery">Galerija</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact">
+                <i class="ri-chat-1-line"></i>
+                <span data-i18n="nav_contact">Kontakt</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="menu-show-btn">
+        <div class="bar-01"></div>
+        <div class="bar-02"></div>
+      </div>
+    </div>
+
+    <!--========== Home / Hero Sekcija ==========-->
+    <section class="sue-section nav-menu-section" id="home">
+      <div class="hero-video-wrapper">
+        <div class="hero-video-overlay"></div>
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          class="hero-video"
+          poster="assets/images/cnc-placeholder.jpg"
+        >
+          <source src="assets/video/cnc-working.webm" type="video/webm" />
+          <source
+            src="assets/video/global-cnc-cutting-sparks.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      <div class="sue-container home-container">
+        <div class="sue-wrapper">
+          <div class="avatar-container">
+            <div
+              class="avatar-info"
+              style="text-align: center; max-width: 800px; margin: 0 auto"
+            >
+              <div class="text-content">
+                <h4
+                  class="hello-text"
+                  data-i18n="hero_welcome"
+                  style="
+                    color: var(--color-01);
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                  "
+                >
+                  HIGH-PRECISION MACHINING
+                </h4>
+                <h1
+                  class="my-name"
+                  data-i18n="hero_title"
+                  style="font-size: var(--h1-font-size); margin: 15px 0"
+                >
+                  POWERFUL TECHNOLOGY.<br /><span
+                    class="text-highlight"
+                    style="color: var(--color-01)"
+                    >ABSOLUTE PRECISION.</span
+                  >
+                </h1>
+                <p
+                  class="what-i-do"
+                  data-i18n="hero_desc"
+                  style="max-width: 650px; margin: 0 auto 35px"
+                >
+                  From concept to micron accuracy. We provide premium CNC
+                  milling, turning, and engraving services for the most
+                  demanding industries across Europe.
+                </p>
+              </div>
+              <!-- POPRAVKA: Dodat display: flex; kako bi profunkcionisali centriranje i gap -->
+              <div
+                class="about-buttons"
+                style="display: flex; justify-content: center; gap: 20px"
+              >
+                <div class="sue-main-btn fill-btn">
+                  <a href="#contact"
+                    ><span data-i18n="hero_hire">Submit RFQ</span></a
+                  >
+                </div>
+                <div class="sue-main-btn border-btn">
+                  <a href="#services"
+                    ><span data-i18n="nav_portfolio">Machinery Park</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#about" class="home-scroll-btn">
+            <i class="ri-mouse-line mouse-icon"></i>
+            <div data-i18n="hero_scroll">Scroll Down</div>
+            <i class="ri-arrow-down-s-line arrow-icon"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!--========== About Us / O nama ==========-->
+    <section class="sue-section nav-menu-section" id="about">
+      <div class="sue-container sue-sub-container">
+        <div class="sue-wrapper">
+          <div class="section-title about-title">
+            <h3 data-i18n="about_title">
+              Inženjerski pristup i strast prema detaljima
+            </h3>
+            <p data-i18n="about_p1">
+              Osnovani 2022. godine u Tesliću, Global CNC d.o.o. je mlada i
+              ambiciozna kompanija fokusirana na visoke performanse u oblasti
+              CNC obrade metala. Spajamo decenijsko iskustvo naših operatera sa
+              najnovijom japanskom i korejskom tehnologijom.
+            </p>
+          </div>
+          <div class="section-content">
+            <div class="about-img">
+              <img
+                src="assets/images/global-cnc-pogon.jpg"
+                alt="Global CNC Pogon"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="about-details">
+              <div class="about-info">
+                <h4 class="iam" data-i18n="about_iam">
+                  GLOBAL CNC d.o.o. Teslić
+                </h4>
+                <p class="about-description" data-i18n="about_desc">
+                  Naša misija je jednostavna: isporučiti komad koji
+                  besprijekorno odgovara Vašoj tehničkoj dokumentaciji. Bez
+                  kašnjenja, bez odstupanja, uz 100% kontrolu kvaliteta svakog
+                  artikla prije isporuke.
+                </p>
+              </div>
+              <div class="pro-list">
+                <div class="pro-card">
+                  <span>7+</span>
+                  <p data-i18n="about_stat1">Modernih CNC centara</p>
+                </div>
+                <div class="pro-card">
+                  <span>0.005mm</span>
+                  <p data-i18n="about_stat2">Garantovana preciznost</p>
+                </div>
+                <div class="pro-card">
+                  <span>100%</span>
+                  <p data-i18n="about_stat3">Kontrola kvaliteta</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--========== Services / Usluge i Mašine ==========-->
+    <section class="sue-section nav-menu-section" id="services">
+      <div class="sue-container sue-sub-container">
+        <div class="sue-wrapper">
+          <div class="section-title">
+            <h3 data-i18n="services_title">Our Production Capabilities</h3>
+          </div>
+          <div class="section-content">
+            <div class="service-container">
+              <!-- Usluga 1: Glodanje -->
+              <div class="card-with-modal">
+                <div class="service-card">
+                  <div class="service-info">
+                    <i class="ri-settings-3-line service-icon"></i>
+                    <h4 data-i18n="srv1_title">CNC Milling (3 &amp; 5 Axis)</h4>
+                    <a href="#" class="service-see-more">
+                      <span data-i18n="see_more">Technical Specs</span>
+                      <i class="ri-arrow-right-up-line"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="service-modal-backdrop">
+                  <div class="service-modal">
+                    <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                    <div class="modal-content">
+                      <div class="modal-title">
+                        <h3>Doosan DNM 5700 &amp; Mori Seiki</h3>
+                        <p data-i18n="srv1_desc">
+                          High-speed machining on modern vertical centers. Ideal
+                          for complex geometries, tools, and housings from
+                          various materials such as steel, aluminum, stainless
+                          steel, and brass.
+                        </p>
+                      </div>
+                      <h4 data-i18n="srv1_list_title">Technical Specs</h4>
+                      <ul class="my-services">
+                        <li>
+                          <i class="ri-checkbox-circle-fill"></i>
+                          <p data-i18n="srv1_l1">
+                            Travels (X / Y / Z): 1050 / 570 / 510 mm
+                          </p>
+                        </li>
+                        <li>
+                          <i class="ri-checkbox-circle-fill"></i>
+                          <p data-i18n="srv1_l2">
+                            Spindle Speed: up to 12,000 rpm
+                          </p>
+                        </li>
+                        <li>
+                          <i class="ri-checkbox-circle-fill"></i>
+                          <p data-i18n="srv1_l3">Max. Table Load: 1000 kg</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Usluga 2: Struganje -->
+              <div class="card-with-modal">
+                <div class="service-card">
+                  <div class="service-info">
+                    <i class="ri-loop-left-line service-icon"></i>
+                    <h4 data-i18n="srv2_title">CNC Turning (Lathe)</h4>
+                    <a href="#" class="service-see-more">
+                      <span data-i18n="see_more">Technical Specs</span>
+                      <i class="ri-arrow-right-up-line"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="service-modal-backdrop">
+                  <div class="service-modal">
+                    <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                    <div class="modal-content">
+                      <div class="modal-title">
+                        <h3>Okuma LB15 &amp; Mori Seiki M300</h3>
+                        <p data-i18n="srv2_desc">
+                          High-precision manufacturing of rotary parts, shafts,
+                          valves, and threads. Our lathes ensure flawless
+                          surface quality and maximum repeatability.
+                        </p>
+                      </div>
+                      <h4 data-i18n="srv2_list_title">Capabilities</h4>
+                      <ul class="my-services">
+                        <li>
+                          <i class="ri-checkbox-circle-fill"></i>
+                          <p data-i18n="srv2_l1">
+                            Micron accuracy and high repeatability.
+                          </p>
+                        </li>
+                        <li>
+                          <i class="ri-checkbox-circle-fill"></i>
+                          <p data-i18n="srv2_l2">
+                            Processing of hardened steels, brass, and plastics.
+                          </p>
+                        </li>
+                        <li>
+                          <i class="ri-checkbox-circle-fill"></i>
+                          <p data-i18n="srv2_l3">
+                            Optimized for small and medium series.
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Usluga 3: Graviranje -->
+              <div class="card-with-modal">
+                <div class="service-card">
+                  <div class="service-info">
+                    <i class="ri-text-snippet service-icon"></i>
+                    <h4 data-i18n="srv3_title">Precision Engraving</h4>
+                    <a href="#" class="service-see-more">
+                      <span data-i18n="see_more">Technical Specs</span>
+                      <i class="ri-arrow-right-up-line"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="service-modal-backdrop">
+                  <div class="service-modal">
+                    <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                    <div class="modal-content">
+                      <div class="modal-title">
+                        <h3 data-i18n="srv3_title">Precision Engraving</h3>
+                        <p data-i18n="srv3_desc">
+                          Mechanical and laser engraving of markings, logos,
+                          serial numbers, and technical inscriptions directly
+                          onto metal components for permanent industrial
+                          traceability.
+                        </p>
+                      </div>
+                      <h4 data-i18n="srv3_list_title">Details</h4>
+                      <ul class="my-services">
+                        <li>
+                          <i class="ri-checkbox-circle-fill"></i>
+                          <p data-i18n="srv3_l1">
+                            Permanent chemical and laser marking.
+                          </p>
+                        </li>
+                        <li>
+                          <i class="ri-checkbox-circle-fill"></i>
+                          <p data-i18n="srv3_l2">
+                            High-contrast markings on all metal surfaces.
+                          </p>
+                        </li>
+                        <li>
+                          <i class="ri-checkbox-circle-fill"></i>
+                          <p data-i18n="srv3_l3">
+                            Perfect formatting according to technical
+                            blueprints.
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--========== Contact / Pametni Upit ==========-->
+    <section class="sue-section nav-menu-section" id="contact">
+      <div class="sue-container sue-sub-container">
+        <div class="sue-wrapper">
+          <div class="section-title">
+            <h3 data-i18n="contact_title">Zatražite Ponudu (RFQ)</h3>
+            <p data-i18n="contact_subtitle">
+              Naš inženjerski tim odgovara u roku od 24/48h
+            </p>
+          </div>
+          <div class="section-content">
+            <div class="contact-container">
+              <div class="contact-info">
+                <h3 data-i18n="contact_info_title">Direktni Kontakt</h3>
+                <ul class="contact-details">
+                  <li class="contact-item">
+                    <a href="mailto:info@globalcnc.co" class="contact-icon"
+                      ><i class="ri-mail-send-fill"></i
+                    ></a>
+                    <div class="contact-method">
+                      <span>E-mail</span>
+                      <h4>info@globalcnc.co</h4>
+                    </div>
+                  </li>
+                  <li class="contact-item">
+                    <a href="tel:+38766849892" class="contact-icon"
+                      ><i class="ri-phone-fill"></i
+                    ></a>
+                    <div class="contact-method">
+                      <span>Telefon</span>
+                      <h4>+387 66 849 892</h4>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="contact-form-container">
+                <h2>
+                  <span data-i18n="contact_form_title1">Do you have a</span>
+                  <span data-i18n="contact_form_title2"
+                    >3D model or drawing?</span
+                  >
+                </h2>
+                <form
+                  id="contactForm"
+                  class="sue-contact-form"
+                  enctype="multipart/form-data"
+                >
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      name="full-name"
+                      data-i18n-placeholder="ph_name"
+                      placeholder="Company Name / Contact Person *"
+                      required=""
+                    />
+                  </div>
+                  <div class="input-group">
+                    <input
+                      type="email"
+                      name="email"
+                      data-i18n-placeholder="ph_email"
+                      placeholder="E-mail Address *"
+                      required=""
+                    />
+                  </div>
+
+                  <!-- Napomena: select opcije se obično ne prevode preko placeholder atributa, pa smo dodali standardni data-i18n -->
+                  <div class="input-group form-group">
+                    <select name="service-type" id="service-type" required="">
+                      <option value="" data-i18n="ph_subject">
+                        Choose primary service *
+                      </option>
+                      <option value="CNC Milling">CNC Milling</option>
+                      <option value="CNC Turning">CNC Turning</option>
+                      <option value="Engraving">Engraving</option>
+                      <option value="Other">Other / Combined</option>
+                    </select>
+                  </div>
+
+                  <!-- Količina polje koristi ph_subject ili dodatni ključ, ovde mapiramo placeholder -->
+                  <div class="input-group">
+                    <input
+                      type="number"
+                      name="quantity"
+                      placeholder="Required quantity (number of pcs) *"
+                      required=""
+                    />
+                  </div>
+
+                  <div class="input-group">
+                    <textarea
+                      name="message"
+                      data-i18n-placeholder="ph_message"
+                      placeholder="Additional notes (Material, surface requirements, tolerances)..."
+                    ></textarea>
+                  </div>
+
+                  <div class="input-group file-upload-group">
+                    <label for="file-upload" class="file-label">
+                      <span class="upload-icon">📁</span>
+                      <strong data-i18n="contact_form_desc"
+                        >Attach technical documentation (Max. 20MB)</strong
+                      >
+                      <span class="file-types"
+                        >Accepted formats: .step, .stp, .dxf, .dwg, .pdf</span
+                      >
+                    </label>
+                    <input
+                      type="file"
+                      id="file-upload"
+                      name="files[]"
+                      multiple=""
+                      accept=".step,.stp,.dxf,.dwg,.pdf"
+                      required=""
+                    />
+                    <div id="file-list" class="file-list"></div>
+                  </div>
+
+                  <div class="input-group send-message">
+                    <button
+                      type="submit"
+                      class="sue-main-btn fill-btn submit-btn"
+                    >
+                      <span data-i18n="btn_send_msg">Submit RFQ</span>
+                    </button>
+                    <div
+                      id="formAlert"
+                      class="contact-form-alert"
+                      style="display: none"
+                    >
+                      <span data-i18n="msg_success"
+                        >Your technical inquiry was submitted
+                        successfully!</span
+                      >
+                      <i class="ri-checkbox-circle-fill"></i>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--========== Google Maps Sekcija ==========-->
+    <section class="sue-section google-map-section">
+      <div class="sue-container">
+        <div
+          id="googlemaps"
+          class="map-above-map google-map"
+          style="
+            min-height: 600px;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid var(--cnc-border);
+          "
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2840.527735872608!2d17.8559227!3d44.6066839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475e6392b5a3b353%3A0xf0354ce855339f54!2sGlobal%20CNC%20doo!5e0!3m2!1shr!2sba!4v1683226672275!5m2!1shr!2sba"
+            width="100%"
+            height="600"
+            style="border: 0; display: block"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!--========== Footer ==========-->
+    <footer class="sue-footer">
+      <div class="sue-container">
+        <div class="inner">
+          <div class="sue-logo">
+            <a href="#home"
+              ><span
+                ><img
+                  src="assets/images/logo/logo-global-cnc-white.png"
+                  alt="Logo"
+                  class="haustechnik-logo-footer" /></span
+            ></a>
+          </div>
+          <div class="section-title">
+            <p>Svetog Save 79, br. 25</p>
+            <p>74270 Teslić - Bosna i Hercegovina</p>
+            <a href="mailto:info@globalcnc.co">info@globalcnc.co</a>
+            <a href="tel:+38766849892">Tel: +387 66 849 892</a>
+          </div>
+
+          <div class="footer-social">
+            <span data-i18n="hero_follow">Follow Us</span>
+            <ul class="footer-social-icons">
+              <li>
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="ri-instagram-fill"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="footer-menu">
+            <li class="menu-item"><a href="index.html#home">Home</a></li>
+            <li class="menu-item">
+              <a href="privacy-policy.html">Privacy Policy</a>
+            </li>
+            <li class="menu-item">
+              <a href="cookie-policy.html">Cookie Policy</a>
+            </li>
+          </ul>
+          <p class="copy-right">
+            <span
+              ><script>
+                document.write(new Date().getFullYear());
+              </script>
+              &copy; Copyright |
+            </span>
+            <span>Sva prava zadržana od strane</span>
+            <a href=""><span>Global CNC d.o.o.</span></a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ========== Cookie Banner ========== -->
+    <div
+      class="kh-cookie-banner"
+      id="khCookieBanner"
+      aria-live="polite"
+      role="dialog"
+      aria-label="Cookie consent"
+    >
+      <div class="kh-cookie-inner">
+        <div class="kh-cookie-header">
+          <span class="kh-cookie-icon"
+            ><i class="ri-shield-check-line"></i
+          ></span>
+          <h2 data-i18n="cookie_title">Cookie Preferences</h2>
+        </div>
+        <p class="kh-cookie-desc" data-i18n="cookie_desc">
+          Koristimo kolačiće kako bismo poboljšali Vaše iskustvo, analizirali
+          saobraćaj i personalizovali sadržaj.
+        </p>
+        <div class="kh-cookie-actions">
+          <button class="kh-btn kh-btn-accept" id="khCookieAccept">
+            <span>Prihvati</span>
+          </button>
+          <button class="kh-btn kh-btn-decline" id="khCookieDecline">
+            <span>Odbij</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--========== Swiper JS ==========-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--========== Main javascript ==========-->
+    <script src="assets/js/lang.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
