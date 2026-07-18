@@ -1,228 +1,391 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery | KASTHOUSE d.o.o.</title>
-    <meta name="description" content="Explore our modern prefabricated houses through our gallery." />
+    <meta
+      name="description"
+      content="Explore our modern prefabricated houses through our gallery."
+    />
 
     <!--=============== FAVICON ===============-->
-    <link rel="icon" href="./assets/images/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/assets/images/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/assets/images/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/assets/images/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/assets/images/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/assets/images/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/assets/images/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/assets/images/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/assets/images/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/images/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/assets/images/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/assets/images/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/images/favicon/favicon-16x16.png"
+    />
 
     <!--========== Main style sheet ==========-->
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <!--========== Remixicon ==========-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+    />
 
     <style>
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 40px 0;
-        }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 40px 0;
+      }
 
-        .gallery-item {
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: var(--shadow-01);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            height: 300px;
-        }
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: var(--shadow-01);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        height: 300px;
+      }
 
-        .gallery-item:hover {
-            transform: scale(1.03);
-        }
+      .gallery-item:hover {
+        transform: scale(1.03);
+      }
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
 
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!--========== Header ==========-->
     <header class="sue-header">
-        <div class="sue-container">
-            <div class="inner">
-                <div class="sue-logo">
-                    <a href="index.html">
-                        <span>
-                            <img src="assets/images/logo/kast-house-logo.png" alt="KASTHOUSE Logo"
-                                class="kast_house_logo-img" loading="lazy" decoding="async">
-                        </span>
-                        <div class="logo-text-wrapper">
-                            <span class="kast_text">KAST</span><span class="house_text">HOUSE</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="header-btns">
-                    <div class="lang-switcher">
-                        <select id="lang-selector" onchange="setLanguage(this.value)">
-                            <option value="en">EN</option>
-                            <option value="it">IT</option>
-                            <option value="de">DE</option>
-                            <option value="hr">HR</option>
-                        </select>
-                    </div>
-
-                    <div class="theme-btn">
-                        <i class="ri-sun-fill sun-icon"></i>
-                        <i class="ri-moon-fill moon-icon"></i>
-                    </div>
-                </div>
+      <div class="sue-container">
+        <div class="inner">
+          <div class="sue-logo">
+            <a href="index.html">
+              <span>
+                <img
+                  src="assets/images/logo/kast-house-logo.png"
+                  alt="KASTHOUSE Logo"
+                  class="kast_house_logo-img"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <div class="logo-text-wrapper">
+                <span class="kast_text">KAST</span
+                ><span class="house_text">HOUSE</span>
+              </div>
+            </a>
+          </div>
+          <div class="header-btns">
+            <div class="lang-switcher">
+              <select id="lang-selector" onchange="setLanguage(this.value)">
+                <option value="en">EN</option>
+                <option value="it">IT</option>
+                <option value="de">DE</option>
+                <option value="hr">HR</option>
+              </select>
             </div>
+
+            <div class="theme-btn">
+              <i class="ri-sun-fill sun-icon"></i>
+              <i class="ri-moon-fill moon-icon"></i>
+            </div>
+          </div>
         </div>
+      </div>
     </header>
 
     <!--========== Gallery Section ==========-->
     <section class="sue-section nav-menu-section home-container" id="gallery">
-        <div class="sue-container">
-            <div class="section-title">
-                <h2 data-i18n="nav_gallery">Gallery</h2>
-                <p>A showcase of our premium prefabricated house projects.</p>
-            </div>
-
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="assets/images/kast-house-home-1.jpg" alt="Gallery Image"
-                        loading="lazy" decoding="async">
-                </div>
-                <div class="gallery-item"><img src="assets/images/kast-house-home-2.jpg" alt="Gallery Image"
-                        loading="lazy" decoding="async">
-                </div>
-                <div class="gallery-item"><img src="assets/images/kast-house-home-3.jpg" alt="Gallery Image"
-                        loading="lazy" decoding="async">
-                </div>
-                <div class="gallery-item"><img src="assets/images/kast-house-home-4.jpg" alt="Gallery Image"
-                        loading="lazy" decoding="async">
-                </div>
-                <div class="gallery-item"><img src="assets/images/kast-house-home-5.jpg" alt="Gallery Image"
-                        loading="lazy" decoding="async">
-                </div>
-                <div class="gallery-item"><img src="assets/images/kast-house-home-6.jpg" alt="Gallery Image"
-                        loading="lazy" decoding="async">
-                </div>
-                <div class="gallery-item"><img src="assets/images/kast-home-custom-extensions (1).jpg"
-                        alt="Gallery Image" loading="lazy" decoding="async">
-                </div>
-                <div class="gallery-item"><img src="assets/images/kast-home-custom-extensions (2).jpg"
-                        alt="Gallery Image" loading="lazy" decoding="async">
-                </div>
-                <div class="gallery-item"><img src="assets/images/kast-home-custom-extensions (3).jpg"
-                        alt="Gallery Image" loading="lazy" decoding="async">
-                </div>
-                <div class="gallery-item"><img src="assets/images/kast-home-custom-extensions (4).jpg"
-                        alt="Gallery Image" loading="lazy" decoding="async"></div>
-                <div class="gallery-item"><img src="assets/images/kast-home-custom-extensions (5).jpg"
-                        alt="Gallery Image" loading="lazy" decoding="async"></div>
-                <div class="gallery-item"><img src="assets/images/kast-home-custom-extensions (6).jpg"
-                        alt="Gallery Image" loading="lazy" decoding="async"></div>
-            </div>
-
-            <div class="section-title">
-                <div class="sue-main-btn fill-btn">
-                    <a href="index.html#home"><i class="ri-home-4-line"></i> Back to Home</a>
-                </div>
-            </div>
+      <div class="sue-container">
+        <div class="section-title">
+          <h2 data-i18n="nav_gallery">Gallery</h2>
+          <p>A showcase of our premium prefabricated house projects.</p>
         </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="assets/images/kast-house-home-1.jpg"
+              alt="Gallery Image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/kast-house-home-2.jpg"
+              alt="Gallery Image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/kast-house-home-3.jpg"
+              alt="Gallery Image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/kast-house-home-4.jpg"
+              alt="Gallery Image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/kast-house-home-5.jpg"
+              alt="Gallery Image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/kast-house-home-6.jpg"
+              alt="Gallery Image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/kast-home-custom-extensions (1).jpg"
+              alt="Gallery Image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/kast-home-custom-extensions (2).jpg"
+              alt="Gallery Image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/kast-home-custom-extensions (3).jpg"
+              alt="Gallery Image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/kast-home-custom-extensions (4).jpg"
+              alt="Gallery Image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/kast-home-custom-extensions (5).jpg"
+              alt="Gallery Image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/kast-home-custom-extensions (6).jpg"
+              alt="Gallery Image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <div class="section-title">
+          <div class="sue-main-btn fill-btn">
+            <a href="index.html#home"
+              ><i class="ri-home-4-line"></i> Back to Home</a
+            >
+          </div>
+        </div>
+      </div>
     </section>
 
     <!--========== Bottom navigation menu ==========-->
     <div class="bottom-nav-container">
-        <div class="bottom-nav">
-            <div class="bottom-nav-inner">
-                <i class="ri-arrow-left-down-line menu-hide-btn"></i>
-                <ul class="menu">
-                    <li class="menu-item">
-                        <a href="index.html#home">
-                            <i class="ri-home-4-line"></i>
-                            <span data-i18n="nav_home">Home</span></a>
-                    </li>
-                    <li>
-                        <a href="index.html#about">
-                            <i class="ri-user-line"></i>
-                            <span data-i18n="nav_about">About</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="gallery.html" class="current">
-                            <i class="ri-image-line"></i>
-                            <span data-i18n="nav_gallery">Gallery</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="index.html#portfolio">
-                            <i class="ri-briefcase-line"></i>
-                            <span data-i18n="nav_portfolio">Projects</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="index.html#contact">
-                            <i class="ri-chat-1-line"></i>
-                            <span data-i18n="nav_contact">Contact</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+      <div class="bottom-nav">
+        <div class="bottom-nav-inner">
+          <i class="ri-arrow-left-down-line menu-hide-btn"></i>
+          <ul class="menu">
+            <li class="menu-item">
+              <a href="index.html#home">
+                <i class="ri-home-4-line"></i>
+                <span data-i18n="nav_home">Home</span></a
+              >
+            </li>
+            <li>
+              <a href="index.html#about">
+                <i class="ri-user-line"></i>
+                <span data-i18n="nav_about">About</span>
+              </a>
+            </li>
+            <li>
+              <a href="gallery.html" class="current">
+                <i class="ri-image-line"></i>
+                <span data-i18n="nav_gallery">Gallery</span>
+              </a>
+            </li>
+            <li>
+              <a href="index.html#portfolio">
+                <i class="ri-briefcase-line"></i>
+                <span data-i18n="nav_portfolio">Projects</span>
+              </a>
+            </li>
+            <li>
+              <a href="index.html#contact">
+                <i class="ri-chat-1-line"></i>
+                <span data-i18n="nav_contact">Contact</span>
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="menu-show-btn">
-            <div class="bar-01"></div>
-            <div class="bar-02"></div>
-        </div>
+      </div>
+      <div class="menu-show-btn">
+        <div class="bar-01"></div>
+        <div class="bar-02"></div>
+      </div>
     </div>
 
     <!--========== Footer ==========-->
     <footer class="sue-footer">
-        <div class="sue-container">
-            <div class="inner">
-                <div class="sue-logo">
-                    <a href="#home"><span>
-                            <img src="assets/images/logo/kast-house-logo.png" alt="Logo" class="haustechnik-logo-footer"
-                                loading="lazy" decoding="async" /></span></a>
-                </div>
-                <div class="section-title">
-                    <p data-i18n="footer_p1">Vukovarska 43A</p>
-                    <p data-i18n="footer_p2">51 000 Rijeka - Croatia</p>
+      <div class="sue-container">
+        <div class="inner">
+          <div class="sue-logo">
+            <a href="#home"
+              ><span>
+                <img
+                  src="assets/images/logo/kast-house-logo.png"
+                  alt="Logo"
+                  class="haustechnik-logo-footer"
+                  loading="lazy"
+                  decoding="async" /></span
+            ></a>
+          </div>
+          <div class="section-title">
+            <p data-i18n="footer_p1">Vukovarska 43A</p>
+            <p data-i18n="footer_p2">51 000 Rijeka - Croatia</p>
 
-                    <a href="tel:+385955989184">Tel: +385 95 598 9184</a>
-                </div>
-                <ul class="footer-menu">
-                    <li class="menu-item"><a href="index.html">Home</a></li>
-                    <li class="menu-item"><a href="#" data-i18n="footer_gallery">Gallery</a></li>
-                    <li class="menu-item"><a href="privacy-policy.html" data-i18n="footer_privacy">Privacy Policy</a>
-                    </li>
-                    <li class="menu-item"><a href="cookie-policy.html" data-i18n="footer_cookies">Cookie Policy</a></li>
-                    <li class="menu-item"><a href="legal-notice.html" data-i18n="footer_legal">Legal Notice</a></li>
-                </ul>
-                <p class="copy-right">
-                    <span>
-                        <script>
-                            document.write(new Date().getFullYear());
-                        </script> &copy; Copyright |
-                    </span>
-                    <span data-i18n="footer_copy">All rights reserved by</span>
-                    <a href="">
-                        <span>KASTHOUSE</span>
-                    </a>
-                </p>
-            </div>
+            <a href="tel:+385955989184">Tel: +385 95 598 9184</a>
+          </div>
+          <ul class="footer-menu">
+            <li class="menu-item"><a href="index.html">Home</a></li>
+            <li class="menu-item">
+              <a href="#" data-i18n="footer_gallery">Gallery</a>
+            </li>
+            <li class="menu-item">
+              <a href="privacy-policy.html" data-i18n="footer_privacy"
+                >Privacy Policy</a
+              >
+            </li>
+            <li class="menu-item">
+              <a href="cookie-policy.html" data-i18n="footer_cookies"
+                >Cookie Policy</a
+              >
+            </li>
+            <li class="menu-item">
+              <a href="legal-notice.html" data-i18n="footer_legal"
+                >Legal Notice</a
+              >
+            </li>
+          </ul>
+          <p class="copy-right">
+            <span>
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              &copy; Copyright |
+            </span>
+            <span data-i18n="footer_copy">All rights reserved by</span>
+            <a href="">
+              <span>KASTHOUSE</span>
+            </a>
+          </p>
         </div>
+      </div>
     </footer>
 
     <!--========== Main javascript ==========-->
     <script src="assets/js/lang.js"></script>
     <script src="assets/js/main.js"></script>
-</body>
-
+  </body>
 </html>
