@@ -756,6 +756,107 @@ body {
   color: var(--color-01);
 }
 
+/* =====================================================
+   RESPONZIVAN GRID I STAJLING ZA CNC MAŠINE
+===================================================== */
+.machinery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolone za desktop */
+  gap: 24px;
+  padding: 30px 0;
+}
+
+.machine-card {
+  background: var(--cnc-bg-surface);
+  border: 1px solid var(--cnc-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.machine-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-01); /* CNC crveni obod na hover */
+}
+
+.machine-img-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #ffffff; /* Fiksna bela podloga izoluje kataloške slike */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.machine-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Sprečava sečenje i distorziju mašine */
+  transition: transform 0.5s ease;
+}
+
+.machine-card:hover .machine-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.machine-info {
+  padding: 20px;
+  border-top: 1px solid var(--cnc-border);
+}
+
+.machine-tag {
+  font-size: var(--tiny-font-size);
+  text-transform: uppercase;
+  color: var(--color-01);
+  font-family: var(--mono-font-family);
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.machine-info h3 {
+  color: var(--color-02);
+  font-size: var(--medium-font-size);
+  font-weight: var(--font-bold);
+}
+
+/* --- RESPONZIVNOST ZA MAŠINE --- */
+@media screen and (max-width: 1024px) {
+  .machinery-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 kolone na laptopu */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .machinery-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolone na tabletima */
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .machinery-grid {
+    grid-template-columns: 1fr; /* 1 kolona na mobilnom telefonu */
+    gap: 12px;
+  }
+  .machine-img-wrapper {
+    height: 180px;
+  }
+}
+
+/* Prilagođavanje za Light Theme */
+.light-theme .machine-card {
+  background: var(--cnc-light-bg-surface);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.light-theme .machine-info {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
 /* =========================================
    Kontakt i Pametna RFQ forma
 ========================================= */
