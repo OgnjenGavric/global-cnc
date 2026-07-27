@@ -783,9 +783,9 @@ body {
 
 .machine-img-wrapper {
   width: 100%;
-  height: 200px;
+  height: 400px;
   overflow: hidden;
-  background: #ffffff; /* Fiksna bela podloga izoluje kataloške slike */
+  background: #212121; /* Fiksna crna podloga izoluje kataloške slike */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -796,6 +796,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain; /* Sprečava sečenje i distorziju mašine */
+  mix-blend-mode: lighten;
   transition: transform 0.5s ease;
 }
 
