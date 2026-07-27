@@ -276,6 +276,7 @@ const translations = {
     "about_hero_foot": "Wir bauen langfristige Partnerschaften auf Basis von Qualität und Vertrauen auf.",
     "about_sum_title": "ÜBER UNS",
     "about_sum_desc": "Wir sind ein modernes CNC-Fertigungsunternehmen mit Fokus auf <strong>Präzisionsfertigung</strong> und <strong>Serienproduktion</strong>.",
+    "about_download_pres": "Präsentation herunterladen (PPTX)",
 
     "fac_title": "PRODUKTIONSSTÄTTEN",
     "fac_sub": "Unser operativer Fußabdruck und Erweiterungsinfrastruktur",
@@ -453,6 +454,8 @@ const translations = {
     "about_hero_foot": "Gradimo dugoročna partnerstva zasnovana na kvalitetu i povjerenju.",
     "about_sum_title": "O NAMA",
     "about_sum_desc": "Mi smo moderna kompanija za CNC mašinsku obradu sa fokusom na <strong>preciznu proizvodnju</strong> i <strong>serijsku proizvodnju</strong>.",
+    "about_download_pres": "Download Presentation (PPTX)",
+    "about_download_pres": "Preuzmite prezentaciju (PPTX)",
 
     "fac_title": "PROIZVODNI POGONI",
     "fac_sub": "Naš operativni otisak i infrastruktura za proširenje",
