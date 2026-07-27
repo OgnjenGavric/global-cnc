@@ -17,7 +17,7 @@
   --cnc-light-bg-surface: #ffffff;
   --cnc-light-bg-raised: #e9ece6;
   --cnc-light-text-primary: #141613;
-  --cnc-light-text-secondary: #586152;
+  --cnc-light-text-secondary: #2e322b;
   --cnc-light-accent: #d60000; /* Crvena prilagođena za bijelu pozadinu */
 
   /* ─── 3. FUNKCIONALNI TOKENI (Sada vuku na crvenu) ───────────── */
@@ -948,6 +948,19 @@ body {
 .sue-contact-form .input-group textarea {
   height: 120px;
   resize: none;
+}
+
+/* Stajling za padajući meni (select) i opcije u formi */
+.sue-contact-form .input-group select option {
+  background-color: var(--cnc-bg-surface);
+  color: var(--cnc-text-primary);
+  padding: 10px;
+}
+
+/* Stajling za opcije kada je aktivna Light tema */
+.light-theme .sue-contact-form .input-group select option {
+  background-color: #ffffff;
+  color: var(--cnc-light-text-primary);
 }
 
 /* Stajling pametnog uploada fajlova */

@@ -43,7 +43,7 @@ function removeSelectedFile(index) {
    fileUploadInput.dispatchEvent(new Event('change'));
 }
 
-// AJAX form submission logic forwarding payload to n8n webhook
+// AJAX form submission logic targeting contact-form-handler.php
 const contactForm = document.getElementById("contactForm");
 if (contactForm) {
    contactForm.addEventListener("submit", function (event) {
@@ -53,40 +53,44 @@ if (contactForm) {
       const formData = new FormData(form);
 
       const submitBtn = form.querySelector(".submit-btn span");
-      const originalBtnText = submitBtn.textContent;
-      submitBtn.textContent = "Slanje upita i crteža...";
+      const originalBtnText = submitBtn ? submitBtn.textContent : "Pošalji";
+      if (submitBtn) submitBtn.textContent = "Slanje upita i crteža...";
 
-      // n8n target webhook URL — replace with actual integration production address
-      const N8N_WEBHOOK_URL = "https://tvoj-n8n-instance.com/webhook/global-cnc-rfq";
+      // Target PHP Form Handler
+      const PHP_HANDLER_URL = "assets/form/contact-form-handler.php";
 
-      fetch(N8N_WEBHOOK_URL, {
+      fetch(PHP_HANDLER_URL, {
          method: "POST",
+         headers: {
+            "X-Requested-With": "XMLHttpRequest" // Omogućava PHP skripti da prepozna AJAX poziv
+         },
          body: formData
       })
          .then((response) => {
             if (response.ok) return response.text();
             throw new Error("Greška na serveru prilikom slanja.");
          })
-         .then(() => {
+         .then((responseText) => {
             const alertDiv = document.getElementById("formAlert");
             if (alertDiv) {
                alertDiv.style.display = "flex";
-               alertDiv.querySelector("span").textContent = "Vaš tehnički upit je uspješno proslijeđen!";
+               alertDiv.querySelector("span").style.color = "";
+               alertDiv.querySelector("span").textContent = responseText || "Vaš tehnički upit je uspješno proslijeđen!";
             }
             form.reset();
             if (fileListContainer) fileListContainer.innerHTML = "";
          })
          .catch((error) => {
-            console.error("n8n router error:", error);
+            console.error("PHP Handler Error:", error);
             const alertDiv = document.getElementById("formAlert");
             if (alertDiv) {
                alertDiv.style.display = "flex";
-               alertDiv.querySelector("span").textContent = "Došlo je do greške. Pokušajte ponovo.";
                alertDiv.querySelector("span").style.color = "#ff3333";
+               alertDiv.querySelector("span").textContent = "Došlo je do greške. Pokušajte ponovo.";
             }
          })
          .finally(() => {
-            submitBtn.textContent = originalBtnText;
+            if (submitBtn) submitBtn.textContent = originalBtnText;
          });
    });
 }
@@ -102,18 +106,20 @@ serviceCardWithModals.forEach((serviceCardWithModal) => {
    const serviceModal = serviceCardWithModal.querySelector(".service-modal");
    const modalCloseBtn = serviceCardWithModal.querySelector(".modal-close-btn");
 
-   serviceCard.addEventListener("click", (e) => {
-      e.preventDefault();
-      serviceBackDrop.style.display = "flex";
-      setTimeout(() => { serviceBackDrop.classList.add("active"); }, 50);
-      setTimeout(() => { serviceModal.classList.add("active"); }, 150);
-   });
+   if (serviceCard && serviceBackDrop && serviceModal && modalCloseBtn) {
+      serviceCard.addEventListener("click", (e) => {
+         e.preventDefault();
+         serviceBackDrop.style.display = "flex";
+         setTimeout(() => { serviceBackDrop.classList.add("active"); }, 50);
+         setTimeout(() => { serviceModal.classList.add("active"); }, 150);
+      });
 
-   modalCloseBtn.addEventListener("click", () => {
-      serviceModal.classList.remove("active");
-      serviceBackDrop.classList.remove("active");
-      setTimeout(() => { serviceBackDrop.style.display = "none"; }, 300);
-   });
+      modalCloseBtn.addEventListener("click", () => {
+         serviceModal.classList.remove("active");
+         serviceBackDrop.classList.remove("active");
+         setTimeout(() => { serviceBackDrop.style.display = "none"; }, 300);
+      });
+   }
 });
 
 /* =====================================================
@@ -217,15 +223,21 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!saved) { setTimeout(() => banner.classList.add('show'), 1000); }
    }
 
-   document.getElementById('khCookieAccept').addEventListener('click', () => {
-      localStorage.setItem(COOKIE_KEY, 'accepted');
-      banner.classList.remove('show');
-   });
+   const acceptBtn = document.getElementById('khCookieAccept');
+   if (acceptBtn) {
+      acceptBtn.addEventListener('click', () => {
+         localStorage.setItem(COOKIE_KEY, 'accepted');
+         banner.classList.remove('show');
+      });
+   }
 
-   document.getElementById('khCookieDecline').addEventListener('click', () => {
-      localStorage.setItem(COOKIE_KEY, 'declined');
-      banner.classList.remove('show');
-   });
+   const declineBtn = document.getElementById('khCookieDecline');
+   if (declineBtn) {
+      declineBtn.addEventListener('click', () => {
+         localStorage.setItem(COOKIE_KEY, 'declined');
+         banner.classList.remove('show');
+      });
+   }
 
    initCookieBanner();
 })();

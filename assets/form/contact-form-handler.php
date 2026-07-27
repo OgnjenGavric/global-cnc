@@ -1,48 +1,65 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = strip_tags(trim($_POST["full-name"]));
-    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-    $subject = strip_tags(trim($_POST["subject"]));
-    $message = trim($_POST["message"]);
+    // Detekcija AJAX zahtjeva
+    $is_ajax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
 
-    if (empty($name) || empty($subject) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    // Čišćenje ulaznih podataka iz forme (usklađeno sa HTML name atributima)
+    $name     = strip_tags(trim($_POST["full-name"] ?? ''));
+    $email    = filter_var(trim($_POST["email"] ?? ''), FILTER_SANITIZE_EMAIL);
+    $service  = strip_tags(trim($_POST["service-type"] ?? ''));
+    $quantity = strip_tags(trim($_POST["quantity"] ?? ''));
+    $message  = trim($_POST["message"] ?? '');
+
+    // Validacija obaveznih polja (Ime, Email, Usluga, Količina)
+    if (empty($name) || empty($service) || empty($quantity) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         http_response_code(400);
-        echo "Please complete the form and try again.";
+        echo "Molimo vas da ispravno popunite sva obavezna polja u formi.";
         exit;
     }
 
-    $recipient = "kasthousedoo@gmail.com"; // Your cPanel email
-    $email_subject = "New Contact Form Submission: $subject";
-    $email_body = "Name: $name\n";
-    $email_body .= "Email: $email\n\n";
-    $email_body .= "Message:\n$message\n";
+    // Zvanična email adresa za primanje upita (RFQ)
+    $recipient = "info@globalcnc.co"; 
 
-    // Detect AJAX request
-    $is_ajax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
+    // Naslov emaila koji stiže vama
+    $email_subject = "Global CNC RFQ Upit: $service ($quantity kom)";
 
-    // Headers for better deliverability
-    $headers = "From: Kast House <noreply@kasthousedoo@gmail.com>\r\n";
+    // Tijelo emaila
+    $email_body  = "Prispio je novi upit sa web stranice globalcnc.co:\n\n";
+    $email_body .= "Ime i prezime / Firma: $name\n";
+    $email_body .= "Email adresa: $email\n";
+    $email_body .= "Odabrana usluga: $service\n";
+    $email_body .= "Tražena količina: $quantity kom\n\n";
+    $email_body .= "Napomena / Poruka:\n";
+    $email_body .= "--------------------------------------------------\n";
+    $email_body .= (!empty($message) ? $message : "Korisnik nije ostavio dodatnu poruku.") . "\n";
+    $email_body .= "--------------------------------------------------\n";
+
+    // Headers za stabilnu isporuku (Mail Deliverability & UTF-8 podrška za č, ć, š, ž)
+    $headers  = "From: Global CNC Website <noreply@globalcnc.co>\r\n";
     $headers .= "Reply-To: $name <$email>\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion();
 
+    // Slanje poruke
     if (mail($recipient, $email_subject, $email_body, $headers)) {
         http_response_code(200);
-        echo "Thank you! Your message has been sent.";
+        echo "Hvala vam! Vaša poruka je uspješno poslata.";
         if (!$is_ajax) {
-            echo '<br><button onclick="window.location.href=\'/\';">Go Home Page</button>';
+            echo '<br><br><button onclick="window.location.href=\'/\';">Povratak na početnu stranicu</button>';
         }
     } else {
         http_response_code(500);
-        echo "Oops! Something went wrong, and we couldn't send your message.";
+        echo "Došlo je do greške prilikom slanja poruke. Molimo pokušajte ponovo.";
         if (!$is_ajax) {
-            echo '<br><button onclick="window.location.href=\'/\';">Go Home Page</button>';
+            echo '<br><br><button onclick="window.location.href=\'/\';">Povratak na početnu stranicu</button>';
         }
     }
 } else {
     http_response_code(403);
-    echo "There was a problem with your submission. Please try again.";
+    echo "Pristup zabranjen. Molimo popunite formu sa sajta.";
     if (!$is_ajax) {
-        echo '<br><button onclick="window.location.href=\'/\';">Go Home Page</button>';
+        echo '<br><br><button onclick="window.location.href=\'/\';">Povratak na početnu stranicu</button>';
     }
 }
 ?>
