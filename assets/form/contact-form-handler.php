@@ -3,6 +3,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Detekcija AJAX zahtjeva
     $is_ajax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
 
+    // 1. HONEYPOT SPAM ZAŠTITA: Ako je skriveno polje popunjeno, radi se o botu
+    if (!empty($_POST['website_confirm'])) {
+        // Vraćamo lažni uspjeh da bot ne shvati da je blokiran
+        http_response_code(200);
+        echo "Hvala vam! Vaša poruka je uspješno poslata.";
+        exit;
+    }
+
     // Čišćenje ulaznih podataka iz forme (usklađeno sa HTML name atributima)
     $name     = strip_tags(trim($_POST["full-name"] ?? ''));
     $email    = filter_var(trim($_POST["email"] ?? ''), FILTER_SANITIZE_EMAIL);
@@ -34,8 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_body .= (!empty($message) ? $message : "Korisnik nije ostavio dodatnu poruku.") . "\n";
     $email_body .= "--------------------------------------------------\n";
 
-    // Headers za stabilnu isporuku (Mail Deliverability & UTF-8 podrška za č, ć, š, ž)
-    $headers  = "From: Global CNC Website <noreply@globalcnc.co>\r\n";
+    // Headers za stabilnu isporuku
+    // ISPRAVLJENO: Koristimo postojeći info@globalcnc.co umjesto noreply@ (koji ne postoji na cPanelu)
+    $headers  = "From: Global CNC Website <info@globalcnc.co>\r\n";
     $headers .= "Reply-To: $name <$email>\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Početna stranica (Index) -->
   <url>
@@ -8,9 +7,6 @@
     <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.globalcnc.co/" />
-    <xhtml:link rel="alternate" hreflang="bs" href="https://www.globalcnc.co/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.globalcnc.co/" />
   </url>
 
   <!-- O nama (About) -->
@@ -19,9 +15,6 @@
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.globalcnc.co/about.html" />
-    <xhtml:link rel="alternate" hreflang="bs" href="https://www.globalcnc.co/about.html" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.globalcnc.co/about.html" />
   </url>
 
   <!-- Galerija (Gallery) -->
@@ -30,17 +23,6 @@
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.globalcnc.co/gallery.html" />
-    <xhtml:link rel="alternate" hreflang="bs" href="https://www.globalcnc.co/gallery.html" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.globalcnc.co/gallery.html" />
-  </url>
-
-  <!-- 404 Stranica -->
-  <url>
-    <loc>https://www.globalcnc.co/404.html</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.1</priority>
   </url>
 
 </urlset>
