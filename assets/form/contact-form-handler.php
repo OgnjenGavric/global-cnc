@@ -42,10 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_body .= (!empty($message) ? $message : "Korisnik nije ostavio dodatnu poruku.") . "\n";
     $email_body .= "--------------------------------------------------\n";
 
-    // Headers za stabilnu isporuku
-    // ISPRAVLJENO: Koristimo postojeći info@globalcnc.co umjesto noreply@ (koji ne postoji na cPanelu)
+    // Headers za stabilnu isporuku (koristimo postojeću info@ adresu)
     $headers  = "From: Global CNC Website <info@globalcnc.co>\r\n";
-    $headers .= "Reply-To: $name <$email>\r\n";
+    $headers .= "Reply-To: " . $name . " <" . $email . ">\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion();
@@ -67,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     http_response_code(403);
     echo "Pristup zabranjen. Molimo popunite formu sa sajta.";
-    if (!$is_ajax) {
+    if (!isset($is_ajax) || !$is_ajax) {
         echo '<br><br><button onclick="window.location.href=\'/\';">Povratak na početnu stranicu</button>';
     }
 }
